@@ -89,7 +89,7 @@ class App extends Component {
     }
 
     DeleteItem(index) {
-        this.state.itemsList.remove(index);
+        this.state.itemsList.splice(index, 1);
         this.setState({
             itemsList: this.state.itemsList
         });
