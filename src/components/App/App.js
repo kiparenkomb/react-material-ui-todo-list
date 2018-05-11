@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import {grey900, cyan600, red500} from 'material-ui/styles/colors';
 
-import Header from '../Header/Header';
-import ButtonAdd from '../Button/ButtonAdd';
+import Header from '../Header';
+import ButtonAdd from '../ButtonAdd';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -58,44 +58,6 @@ const HomeIcon = (props) => (
 
 
 class App extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            isModalOpen: false,
-            deletedElement: null,
-            itemsList: [
-                {id: 0, selectValue: '1', inputNumber: '22'},
-                {id: 1, selectValue: '2', inputNumber: '12'},
-                {id: 2, selectValue: '3', inputNumber: '4'}
-            ]
-        }
-    }
-
-    handleChangeValue = (event, index, selectValue) => this.setState({ selectValue });
-    handleChangeNumber = (event, index, inputNumber) => this.setState({ inputNumber });
-
-    AddItem() {
-        let obj = {
-            id: this.state.itemsList.length,
-            selectValue: this.state.selectValue,
-            inputNumber: this.state.inputNumber
-        };
-        this.setState({
-            selectValue: "",
-            inputNumber: "",
-            itemsList: [...this.state.itemsList, obj]
-        });
-    }
-
-    DeleteItem(index) {
-        this.state.itemsList.splice(index, 1);
-        this.setState({
-            itemsList: this.state.itemsList
-        });
-    }
-
-
 
     render() {
         const ButtonCloseModal = (props) => (

@@ -7,7 +7,7 @@ injectTapEventPlugin();
 
 const ButtonAdd = (props) => (
     <FloatingActionButton secondary={true}
-        onTouchTap={() => props.openModal()}
+                          onTouchTap={() => props.openModal()}
     >
         <ContentAdd />
     </FloatingActionButton>
